@@ -77,7 +77,9 @@
             if (tag.tagName.toUpperCase() === 'INPUT' || tag.tagName.toUpperCase() === 'TEXTAREA'){
                 $this.attr('placeholder', text);    
             }else if(tag.tagName.toUpperCase() === 'IMG'){
-                $this.attr('alt', text);    
+                $this.attr('alt', text);  
+            }else if(tag.tagName.toUpperCase() === 'A'){
+                $this.attr('title', text);        
             }else{
                 $this.text(text === '' ? options.missingText : text);
             }    
