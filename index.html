@@ -1,22 +1,25 @@
 <html>
 <head>
-	<title>Y</title>
+	<title>jQuery-i18n plugin</title>
 </head>
 <body>
-	<h1>Homes</h1>
-	<div id="me">
+	<h1>jQuery-i18n Plugin</h1>
+	<div id="eng">
 		<span data-i18n="home"></span>
 
 	</div>
-	<div id="you">
+	<div id="jap">
 		<span data-i18n="home"></span>
 	</div>
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script src="js/jquery.i18n.js"></script>
-<script type="text/javascript">
-	$('#me').i18n();
-	$('#you').i18n({language:'ja_jp'});
 	
-</script>
+
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="js/jquery.i18n.js"></script>
+
+	<script type="text/javascript">
+		$('#eng').i18n();
+		$('#jap').i18n({language:'ja_jp'});
+	</script>
+
 </body>
 </html>

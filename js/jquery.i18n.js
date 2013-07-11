@@ -127,14 +127,4 @@
         }
     };
 
-
-
-
-
-
-
-
-
-    
-
 })(jQuery, document, window);	
