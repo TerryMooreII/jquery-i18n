@@ -1,15 +1,117 @@
 <html>
 <head>
 	<title>jQuery-i18n plugin</title>
+	<style type="text/css">
+	.border{
+		border:solid 1px #ddd;
+		height:50px;
+	}
+
+	</style>
 </head>
 <body>
 	<h1>jQuery-i18n Plugin</h1>
-	<div id="eng">
-		<span data-i18n="home"></span>
+
+	<div>
+		<p>
+			The jquery-i18n plugin is responsible for looking up a looking up a value on in a locale specific translation file.  
+		</p>
+		<p>
+			Whether its with in a specific selector or the entire body element the jQuery-i18n plugin will load the translation file and find all elements under that selector in the the DOM that have a data-i18n attribute.  Once found it will lookup the value in the translation file and update the appropriate attribute with the translated value.  You can even have multiple content areas on the page with different translations.  All translation files are loaded when needed and you do NOT have include the script tag at in your html. This means we only load the requested translation file which means less network requests. 
+		</p>
+
+		<strong>Options</strong>
+		<dl>
+			<dt>missingText</dt>
+			<dd>Default: '<missing>':  This is the text that will appear if the value is not found in the translation file. </dd>
+			
+			<dt>missingPlaceholder</dt>
+			<dd>Default: '':  The default value to be shown in a placeholder if the value is not found</dd>
+			
+			<dt>path</dt>
+			<dd>Default: i18n:  This is the folder that contains the translations files</dd>
+			
+			<dt>baseFileName</dt>
+			<dd>Default: strings: The base file name for all translation files.</dd>
+
+			<dt>language</dt>
+			<dd>Default: en_us:  The language file to use.</dd>
+
+		</dl>
+
+		<p>
+			The language file file used is a concat of the path, baseFilename, and the languague. 
+			<br> 
+			Example:
+			<br>
+			With the default setting the application will look up the file: i18n/strings_en_us.js.
+			Defaults:
+			<pre>$('body').i18n();</pre>  
+			<br>
+			If you were to pass the language as ja_jp to the plugin it would then look up the values in i18n/strings_ja_jp.js.
+			<pre>$('body').i18n( { language : 'ja_jp' } );</pre>
+			<br>
+			The langauge value can be anything that makes sense to your application as long as there is a file that exists in the path pattern above.
+		</p>
+
+		<p>
+			<strong>The translation file format</strong><br>
+			The file must be in the following format.
+			<br>
+			Here we are showing a strings file that ends in en_us.  The ending to the file must match the object name in the translation file.    
+			<pre>
+				window.i18n.en_us = {
+					welcome: 'Welcome in English', 
+					name: 'Name'
+				}
+			</pre>
+		</p>
+
+		<p>
+			<strong>Methods</strong>
+			<dl>
+			<dt>getValue</dt>
+			<dd>
+				<ul>
+					<li>When called on the same element as the when its instantated your getValue call will return the value in that language.</li>
+					<li>Example: <pre>$('body').i18n('getValue', 'welcome') </pre>  This will return the value for welcome or undefined if its not found.</dl>
+				</ul>
+			</dd>
+			</dl>
+		</p>
+		<p>
+			<strong>Elements supported with the data-i18n attribute</strong>
+			<dl>
+				<dt>A</dt>
+				<dd>Updates the title attribute</dd>
+
+				<dt>IMG</dt>
+				<dd>Updates the alt attribute</dd>
+
+				<dt>INPUT or TEXTAREA</dt>
+				<dd>Updates the placeholder attribute</dd>
+
+				<dt>SPAN, DIV, P, etc</dt>
+				<dd>Updates the text value of that element.  It recommended to use span for normal text. </dd>
+
+			</dl>
+		</p>
+	</div>
+
+	<div id="eng" class="border">
+
+		<span data-i18n="welcome"></span>
+		<pre>
+			$('#eng').i18n();
+		</pre>
 
 	</div>
-	<div id="jap">
-		<span data-i18n="home"></span>
+	<div id="jap" class="border">
+
+		<span data-i18n="welcome"></span>
+		<pre>
+			$('#jap').i18n({language:'ja_jp'});
+		</pre>
 	</div>
 	
 
