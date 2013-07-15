@@ -100,6 +100,13 @@ $('body').i18n('getValue', 'welcome') //returns: Welcome in English
 $('body').i18n('getValue', 'doesntExist') //returns: undefined
 ```
 
+**destroy**
+Removes the translations.  Call this before reapplying new translations.
+
+```javascript
+$('body').i18n('destroy');
+```
+
 Elements supported 
 ------------------
 
