@@ -115,6 +115,6 @@ Updates the alt attribute
 Updates the placeholder attribute
 
 `SPAN`, `DIV`, `P`
-Updates the text value of that element. It recommended to use span for normal text. Does a `$(el).text('new value');`
+Updates the text value of that element.  Does a `$(el).text('new value');` It recommended to use span for normal text.
 
 
