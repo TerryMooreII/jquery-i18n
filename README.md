@@ -38,7 +38,7 @@ An object that contains the default values that will be displayed if we are not 
 	title: '', // For A tags
 	alt: '', //For IMG tags
 	placeholder: '', //For INPUT/TEXTAREA tags
-	text: '' // For SPAN, DIV, LABEL, P, etc tags
+	text: '<missing>' // For SPAN, DIV, LABEL, P, etc tags
 }
 ```
 
