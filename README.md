@@ -56,7 +56,7 @@ $('body').i18n( { language : 'ja_jp' } );
 <body>
     <div>
     	<span data-i18n="welcome"></span> <!-- Updates the span text with the welcome value from the translation file-->
-        <input data-i18n="Enter_Name"> <!-- Updates the placeholder value with Enter_Name value fro from the translation file-->
+        <input data-i18n="enter_name"> <!-- Updates the placeholder value with enter_name value fro from the translation file-->
 	</div>
 </body>
 </html>
@@ -73,7 +73,7 @@ Here we are showing a strings file that ends in en_us. The ending to the file mu
 ```javascript
 window.i18n.en_us = {
 	welcome: 'Welcome in English', 
-	name: 'Name'
+	enter_name: 'Enter Name'
 }
 ```
 
