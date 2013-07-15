@@ -50,7 +50,17 @@ If you were to pass the language as ja_jp to the plugin it would then look up th
 $('body').i18n( { language : 'ja_jp' } );
 ```
 
-**Note: ** The langauge value can be anything that makes sense to your application as long as there is a file that exists in the path pattern above.
+**Sample HTML**
+```
+<html>
+<body>
+    <div>
+    	<span data-i18n="welcome"></span> <!-- Updates the span text with the welcome value from the translation file-->
+        <input data-i18n="Enter_Name"> <!-- Updates the placeholder value with Enter_Name value fro from the translation file-->
+	</div>
+</body>
+</html>
+```
 
 
 
@@ -66,6 +76,8 @@ window.i18n.en_us = {
 	name: 'Name'
 }
 ```
+
+**Note: ** The langauge value doesn't have to be en_us format, you could also just have en or anything else that makes sense to your application as long as there is a file that exists in the path pattern above.
 
 Methods
 -------
@@ -96,4 +108,5 @@ Updates the placeholder attribute
 
 `SPAN`, `DIV`, `P`
 Updates the text value of that element. It recommended to use span for normal text.
+
 
