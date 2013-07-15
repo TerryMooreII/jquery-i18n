@@ -1,11 +1,11 @@
-jQuery-i18n Plugin
+jQuery-i18n Plug-in
 ==================
 
-The jquery-i18n plugin is responsible for looking up a looking up a value on in a locale specific translation file.
+The jquery-i18n plug-in is responsible for loading a translation dictionary file, parsing the DOM looking for a `data-i18n` attribute, and then updating the text with the translated value.
 
-Whether its with in a specific element selector or the entire body element the jQuery-i18n plugin will load a translation file and find all children DOM elements that have a `data-i18n` attribute. Once an attribute is found it value will become the look up key in the translation file.  Depending on the element type it will then update the text value with the appropriate translation. 
+Whether its with in a specific element selector or the entire body element the jQuery-i18n plug-in will load a translation file and find all children DOM elements that have a `data-i18n` attribute. Once an attribute is found its value will become the look up key in the translation file.  Depending on the element type it will then update the text value with the appropriate translation. 
 
-All translation files are loaded as needed and you do not have include translation's the script tag in your html. This means we only load the requested translation file which means less network requests.
+All translation files are loaded as needed and you do not have include translation dictionary in a the `script` tag in your HTML. This means we only load appropriately requested translation file which means less network requests.
 
 Options
 -------
@@ -38,14 +38,14 @@ The language file to use.
 Examples
 --------
 
-The language file file used is a concat of the path, baseFilename, and the languague. 
+The language file file used is a concat of the path, baseFilename, and the language. 
 
 With the default setting the application will look up the file: i18n/strings_en_us.js. Defaults:
 ```javascript
 $('body').i18n();
 ```
 
-If you were to pass the language as ja_jp to the plugin it would then look up the values in i18n/strings_ja_jp.js.
+If you were to pass the language as ja_jp to the plug in it would then look up the values in i18n/strings_ja_jp.js.
 ```javascript
 $('body').i18n( { language : 'ja_jp' } );
 ```
@@ -83,7 +83,7 @@ window.i18n.en_us = {
 }
 ```
 
-**Note: ** The langauge value doesn't have to be en_us format, you could also just have en or anything else that makes sense to your application as long as there is a file that exists in the path pattern above.
+**Note: ** The language value doesn't have to be en_us format, you could also just have en or anything else that makes sense to your application as long as there is a file that exists in the path pattern above.
 
 Methods
 -------
@@ -101,7 +101,7 @@ This will return the value for the `welcome` key or `undefined` if its not found
 Elements supported 
 ------------------
 
-The following is a list of the HTML elements that are currently supported witht the with the `data-i18n` attribute
+The following is a list of the HTML elements that are currently supported with the with the `data-i18n` attribute
 
 `A` 
 Updates the title attribute
