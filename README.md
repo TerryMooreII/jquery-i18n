@@ -10,11 +10,15 @@ All translation files are loaded as needed and you do not have include translati
 Options
 -------
 
-**missingText:** 
-_Default: '`<missing>`'_
-
+**missing:** 
 ```
-This text will appear if the value is not found in the translation file.
+An object that contains the default values that will be displayed if we are not able to locate the `data-i18n` key in the translation file.
+{
+	title: '', // For A tags
+	alt: '', //For IMG tags
+	placeholder: '', //For INPUT/TEXTAREA tags
+	text: '' // For SPAN, DIV, LABEL, P, etc tags
+}
 ```
 **missingPlaceholder:** _Default: ''_
 ```
@@ -121,7 +125,7 @@ Updates the alt attribute
 `INPUT` or `TEXTAREA`
 Updates the placeholder attribute
 
-`SPAN`, `DIV`, `P`
+`SPAN`, `DIV`, `P`, `LABEL`
 Updates the text value of that element.  Does a `$(el).text('new value');` It recommended to use span for normal text.
 
 

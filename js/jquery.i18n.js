@@ -17,12 +17,17 @@
 
     // Default options for the plugin as a simple object
     var defaults = {
-        missingText:'<missing>',
-        missingPlaceholder:'', 
+        missing: {
+        	text:'<missing>',
+        	placeholder:'',
+        	alt: '',
+        	title: ''
+    	}, 
         displayErrorMessage:true,
         path:'i18n',
         baseFilename: 'strings',
-        language: 'en_us'
+        language: 'en_us',
+        dataTag: 'i18n'  //Undocument but pass this options in to change the data-i18n attr to data-`whatever` incase of conflict
     };
 
     // Plugin constructor
@@ -68,20 +73,22 @@
      };
 
      var parseDOM = function(element, translation, options){
-     	element.find('[data-'+pluginName+']').each(function () {   
+     	var missing = options.missing;
+
+     	element.find('[data-' + options.dataTag + ']').each(function () {   
             var $this = $(this);
-            var attr = $this.attr('data-' + pluginName);
+            var attr = $this.attr('data-' + options.dataTag);
             var tag = this;
-            var text = translation[attr] || options.missingPlaceholder; 
+            var text = translation[attr]; 
             
             if (tag.tagName.toUpperCase() === 'INPUT' || tag.tagName.toUpperCase() === 'TEXTAREA'){
-                $this.attr('placeholder', text);    
+                $this.attr('placeholder', text || missing.placeholder);    
             }else if(tag.tagName.toUpperCase() === 'IMG'){
-                $this.attr('alt', text);  
+                $this.attr('alt', text || missing.attr);  
             }else if(tag.tagName.toUpperCase() === 'A'){
-                $this.attr('title', text);        
+                $this.attr('title', text || missing.title);        
             }else{
-                $this.text(text === '' ? options.missingText : text);
+                $this.text(text || missing.text);
             }    
         });
      };
