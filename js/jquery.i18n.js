@@ -127,10 +127,14 @@
                 }
             });
 
+
             // If the earlier cached method
             // gives a value back return the value,
             // otherwise return this to preserve chainability.
-            return returns !== undefined ? returns : this;
+            if ( options === 'getValue')
+            	return returns;
+            else
+            	return returns !== undefined ? returns : this;
         }
     };
 
