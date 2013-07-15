@@ -58,6 +58,11 @@ $('body').i18n( { language : 'ja_jp' } );
     	<span data-i18n="welcome"></span> <!-- Updates the span text with the welcome value from the translation file-->
         <input data-i18n="enter_name"> <!-- Updates the placeholder value with enter_name value fro from the translation file-->
 	</div>
+	<script src="path/to/jquery"></script>
+	<script src="path/to/jquery.i18n.js"></script>
+	<script>
+		$('body').i18n();
+	</script>
 </body>
 </html>
 ```
