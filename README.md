@@ -83,7 +83,7 @@ window.i18n.en_us = {
 }
 ```
 
-**Note: ** The language value doesn't have to be en_us format, you could also just have en or anything else that makes sense to your application as long as there is a file that exists in the path pattern above.
+**Note:** The language value doesn't have to be en_us format, you could also just have en or anything else that makes sense to your application as long as there is a file that exists in the path pattern above.
 
 Methods
 -------
