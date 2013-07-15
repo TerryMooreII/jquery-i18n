@@ -11,7 +11,7 @@ Options
 -------
 
 **missingText:** 
-_Default: ''_
+_Default: '<missing>'_
 
 ```
 This is the text that will appear if the value is not found in the translation file.
