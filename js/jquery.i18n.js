@@ -39,7 +39,7 @@
         this.options = $.extend({}, defaults, options)
 
         // Attach data to the elment
-        this.$el      = $(element);
+        this.$el = $(element);
         this.$el.data(name, this);
 
         //kick it off

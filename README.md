@@ -10,20 +10,7 @@ All translation files are loaded as needed and you do not have include translati
 Options
 -------
 
-**missing:** 
-```
-An object that contains the default values that will be displayed if we are not able to locate the `data-i18n` key in the translation file.
-{
-	title: '', // For A tags
-	alt: '', //For IMG tags
-	placeholder: '', //For INPUT/TEXTAREA tags
-	text: '' // For SPAN, DIV, LABEL, P, etc tags
-}
-```
-**missingPlaceholder:** _Default: ''_
-```
-This value will shown in a placeholder if the translated value is not found
-```
+
 
 **path:** _Default: i18n_
 ```
@@ -40,7 +27,20 @@ The base file name for all translation files.
 The language to use.
 ```
 
+**missing:** 
+```
+An object that contains the default values that will be displayed if we are not able to locate the `data-i18n` key in the translation file.
+{
+	title: '', // For A tags
+	alt: '', //For IMG tags
+	placeholder: '', //For INPUT/TEXTAREA tags
+	text: '' // For SPAN, DIV, LABEL, P, etc tags
+}
+```
+
 The language file used is a concatenation of the path, baseFilename, and the language. 
+
+
 
 Examples
 --------
