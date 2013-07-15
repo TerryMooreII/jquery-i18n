@@ -7,10 +7,14 @@ Whether its with in a specific element selector or the entire body element the j
 
 All translation files are loaded as needed and you do not have include translation dictionary in a the `script` tag in your HTML. This means we only load appropriately requested translation file which means less network requests.
 
+Demo
+----
+[Check out the demo](http://www.terrymooreii.com/localization)
+
+
+
 Options
 -------
-
-
 
 **path:** _Default: i18n_
 ```
