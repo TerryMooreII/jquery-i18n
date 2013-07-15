@@ -17,7 +17,7 @@ Options
 The folder that contains the translations files
 ```
 
-**baseFileName:** _Default: strings_
+**baseFilename:** _Default: strings_
 ```
 The base file name for all translation files.
 ```
