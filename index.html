@@ -48,8 +48,8 @@
 	<script type="text/javascript">
 		//This is for the drop down
 		$('select').on('change', function(){
-			$('body').i18n('destroy');
-			$('body').i18n( { language : $(this).val() } );
+			$('body').i18n('destroy')
+					 .i18n( { language : $(this).val() } );
 		});
 	</script>
 
