@@ -59,7 +59,7 @@
         }
     };
 
-	// Private function that is only called by the plugin
+	// Private functions that is only called by the plugin
     var loadLocaleFile = function(filename) {
      	var script=document.createElement('script')
 	  	script.setAttribute("type","text/javascript")
