@@ -14,16 +14,16 @@ Options
 _Default: '`<missing>`'_
 
 ```
-This is the text that will appear if the value is not found in the translation file.
+This text will appear if the value is not found in the translation file.
 ```
 **missingPlaceholder:** _Default: ''_
 ```
-The default value to be shown in a placeholder if the value is not found
+This value will shown in a placeholder if the translated value is not found
 ```
 
 **path:** _Default: i18n_
 ```
-This is the folder that contains the translations files
+The folder that contains the translations files
 ```
 
 **baseFileName:** _Default: strings_
@@ -33,19 +33,20 @@ The base file name for all translation files.
 
 **language:** _Default: en_us_
 ```
-The language file to use.
+The language to use.
 ```
+
+The language file used is a concatenation of the path, baseFilename, and the language. 
+
 Examples
 --------
 
-The language file file used is a concat of the path, baseFilename, and the language. 
-
-With the default setting the application will look up the file: i18n/strings_en_us.js. Defaults:
+With the default setting, the application will load and use this translation file: i18n/strings_en_us.js.
 ```javascript
 $('body').i18n();
 ```
 
-If you were to pass the language as ja_jp to the plug in it would then look up the values in i18n/strings_ja_jp.js.
+If you were to pass the language as ja_jp, the plug-in would then load and use the values from this file i18n/strings_ja_jp.js.
 ```javascript
 $('body').i18n( { language : 'ja_jp' } );
 ```
@@ -67,14 +68,14 @@ $('body').i18n( { language : 'ja_jp' } );
 </html>
 ```
 
-If you could even specify the div id `myId` instead of `body` to narrow down the DOM parsing.  You can even have another `div` with a different id and then have that div translated into different language. 
+You can even specify the div id `myId` instead of `body` to narrow down DOM parsing.  You can even multiple `div` with a different ids and then have those div translated into different language. 
 
 
 Translation file format
 -----------------------
 
 The file must be in the following format. 
-Here we are showing a strings file that ends in en_us. The ending to the file must match the object name in the translation file.
+Here we are showing a strings file that ends in `en_us`. The ending to the file must match the object name in the translation file.
 
 ```javascript
 window.i18n.en_us = {
@@ -83,25 +84,26 @@ window.i18n.en_us = {
 }
 ```
 
-**Note:** The language value doesn't have to be en_us format, you could also just have en or anything else that makes sense to your application as long as there is a file that exists in the path pattern above.
+**Note:** The language value doesn't have to be a language_country format, you could specify and format that makes sense to your application as long as there is a file that exists in the path pattern above and it matches the window.i18n.`ending` format.
 
 Methods
 -------
 
 **getValue**
-When called on the same element as the when its instantated your getValue call will return the value in that language.
+When called on the same element that was used to instantiated the plug-in the return value of getValue will be the translated value in that language.
 
 **Example:**
 ```javascript
-$('body').i18n('getValue', 'welcome') 
+$('body').i18n('getValue', 'welcome') //returns: Welcome in English
 ```
-
-This will return the value for the `welcome` key or `undefined` if its not found.
+```javascript
+$('body').i18n('getValue', 'doesntExist') //returns: undefined
+```
 
 Elements supported 
 ------------------
 
-The following is a list of the HTML elements that are currently supported with the with the `data-i18n` attribute
+Below is a list of the HTML elements that are currently supported with the with the `data-i18n` attribute
 
 `A` 
 Updates the title attribute
@@ -113,6 +115,6 @@ Updates the alt attribute
 Updates the placeholder attribute
 
 `SPAN`, `DIV`, `P`
-Updates the text value of that element. It recommended to use span for normal text.
+Updates the text value of that element. It recommended to use span for normal text. Does a `$(el).text('new value');`
 
 
