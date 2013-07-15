@@ -54,7 +54,7 @@ $('body').i18n( { language : 'ja_jp' } );
 ```
 <html>
 <body>
-    <div>
+    <div id="myId">
     	<span data-i18n="welcome"></span> <!-- Updates the span text with the welcome value from the translation file-->
         <input data-i18n="enter_name"> <!-- Updates the placeholder value with enter_name value fro from the translation file-->
 	</div>
@@ -62,6 +62,7 @@ $('body').i18n( { language : 'ja_jp' } );
 </html>
 ```
 
+If you could even specify the div id `myId` instead of `body` to narrow down the DOM parsing.  You can even have another `div` with a different id and then have that div translated into different language. 
 
 
 Translation file format
