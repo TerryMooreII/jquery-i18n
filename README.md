@@ -97,8 +97,3 @@ Updates the placeholder attribute
 `SPAN`, `DIV`, `P`
 Updates the text value of that element. It recommended to use span for normal text.
 
-
-jquery-i18n
-===========
-
-jQuery plugin for text localization on the client side.
