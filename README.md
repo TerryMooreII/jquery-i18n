@@ -46,7 +46,7 @@ The language file used is a concatenation of the path, baseFilename, and the lan
 
 
 
-Examples
+Examples 
 --------
 
 With the default setting, the application will load and use this translation file: i18n/strings_en_us.js.
