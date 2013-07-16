@@ -76,7 +76,7 @@ $('body').i18n( { language : 'ja_jp' } );
 </html>
 ```
 
-You can even specify the div id `myId` instead of `body` to narrow down DOM parsing.  You can even multiple `div` with a different ids and then have those div translated into different language. 
+You can even specify the div id `myId` instead of `body` to narrow down DOM parsing.  You can even call the i18n plug-in on multiple elements to have each of the element translated into different languages. 
 
 
 Translation file format
@@ -98,9 +98,9 @@ Methods
 -------
 
 **getValue**
+
 When called on the same element that was used to instantiated the plug-in the return value of getValue will be the translated value in that language.
 
-**Example:**
 ```javascript
 $('body').i18n('getValue', 'welcome') //returns: Welcome in English
 ```
@@ -109,6 +109,7 @@ $('body').i18n('getValue', 'doesntExist') //returns: undefined
 ```
 
 **destroy**
+
 Removes the translations.  Call this before reapplying new translations.
 
 ```javascript
@@ -130,6 +131,6 @@ Updates the alt attribute
 Updates the placeholder attribute
 
 `SPAN`, `DIV`, `P`, `LABEL`
-Updates the text value of that element.  Does a `$(el).text('new value');` It recommended to use span for normal text.
+Updates the text value of that element by doing a `$(el).text('new value');` 
 
 
